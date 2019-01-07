@@ -1,343 +1,93 @@
-//alert('Hello')
-//Log to console
-/* Multi
-Line
-Comment*/
-
-console.log('hello world');
-console.log(123);
-console.log(true);
-var greeting = 'hello';
-console.log(greeting)
-console.log([1,2,3,4]);
-console.log({a:1, b:2});
-
-//show object in table
-console.table({a:1, b:2});
-console.error('This is error');
-
-console.clear();
-console.warn('This is warning');
-
-//measeure time taken to run script
-console.time('Hello');
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
-console.log('hello world');
-console.timeEnd('Hello');
+rgb     value is between 0 and 255
 
 
-// var, let, const
 
-var name = 'John Doe';
-console.log(name);
-name = 'Steve Smith';
-console.log(name);
+===================================================================
+tag*count
 
-//Init var
-var greeting;
-console.log(greeting);
-greeting = 'Hello';     //Undefined
-console.log(greeting);
+option*3    will give three options tag
 
-//variable name can includes: letters, numbers, _, $
-//can't start with number
+===================================================================
 
-var $name = 'John';     //mainly used with Jquery
-var _name = 'John';
 
-//Multi word vars
-var firstName = 'John'      //Camel case
-var firsr_name = 'Sara';    //Underscore
-var FirstName = 'Tom';      //pascal case
-var firsrname;
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
 
-//Let
 
-let name = 'John Doe';
-console.log(name);
-name = 'Steve Smith';
-console.log(name);
+MOUSE EVENTS:           click   dblclick    mousedown   mouseup     mouseenter      mouseleave      mouseover       mouseout
+KEY & INPUT EVENTS:     change  keydown     keyup       keypress    focus           blur            cut             paste           input (ctrl + X,V,Z  on these input event will trigger)
 
-//const
-const name1 = 'John';
-console.log(name1);
 
-//can not reassign
-//name = 'Sara';
+heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
 
-//have to assign a value
-//const greeting;
 
-//OBJECTS
-const person = {
-    name: 'John',
-    age: 30
+e.target;
+e.target.id;
+e.target.className;
+e.target.classList;
+e.target.value;
+e.preventDefault();
+
+
+document.querySelector('.clear-tasks').addEventListener('click', 
+function(e){
+    console.log('Hello World');
+    e.preventDefault();         //stop default/defined behavior of event
+});
+
+
+link.setAttribute('title', 'Google');
+
+
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+
+const liOdd = document.querySelectorAll('li:nth-child(odd');
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+
+document.querySelector('li:nth-child(3)').style.color = 'cyan';     //access 3rd element of li
+document.querySelector('li:nth-child(4)').textContent = 'Hello World';     //access last element of li
+
+
+document.getElementById('task-title').style.background = '#333';
+document.getElementById('task-title').style.color = '#fff';
+document.getElementById('task-title').style.padding = '5px';
+
+
+console.log(document.getElementById('task-title').id);
+
+
+val = window.navigator;
+val = window.navigator.appName;
+val = window.navigator.appVersion;
+val = window.navigator.platform;
+
+
+const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
+
+cars.forEach(function(car, index){
+    console.log(`${index}: ${car}`);
+});
+
+
+function greet(firstName = 'John', lastName = 'Doe'){        //es6
+    //if(typeof firstName === 'undefined'){firstName = 'John'}      //es5
+    //if(typeof lastName === 'undefined'){lastName = 'Doe'}
+    //console.log('Hello');
+    return `Hello ${firstName} ${lastName}`;
 }
 
-person.name = 'Sara';
-person.age = '32';
-console.log(person);
-
-const number = [1, 2,3,4,5];
-number.push(6);
-console.log(number);
-
-//const number = [1, 2,3,4,5, 6]; //not possible to reassign
 
 
-// 6 premitive datatype
-//String, Number, Boolean, Null, Undefined, Symbols(ES6)
-//Reference Datatypes / Objects
-//Arrays, Object Literals, Function, Dates
-
-//Primitive
-const name = 'John';
-console.log(typeof name);       //type of variable
-const car = null;
-console.log(typeof car);
-
-//symbol
-const sym = Symbol();
-console.log(typeof sym);
-
-
-//Reference type
-//array
-
-const hobbies = ['movies', 'music'];
-
-//object
-const address = {
-    city: 'Boston',
-    state: 'MA'
-}
-
-//date
 const today = new Date();
+let birthDate = new Date('9-11-1994 06:55:55');
+birthDate = new Date('September 10 1981');
+birthDate = new Date('9/10/1981');
+val = today.toString();
 
-console.log(typeof hobbies);
-console.log(typeof address);
-console.log(today);
-
-
-//type Conversion
-
-let val;
-//number to string
-val = String(5);
-
-val = String(4+4);
-val = String(true);
-val = String(new Date());
-
-// Array to string
-
-val = String([1, 2,3]);
-val = (5).toString();
-val = (true).toString();
-
-//string to number
-
-val = Number('5');
-val = Number(true);
-val = Number(false);
-val = Number(null);
-val = Number('hello');
-val = Number([1,2,3]);
-
-val = parseInt('100.30');
-val = parseFloat('100.40');
-console.log(val);
-console.log(typeof val);
-//console.log(val.length);
-console.log(val.toFixed());
-console.log(val.toFixed(2));
-
-//concat
-const val1 = String(5);
-const val2 =6;
-const sum = Number(val1 + val2);
-console.log(sum);
-console.log(typeof sum);
-
-//Number
-
-//Number, Math
-const num1 = 100;
-const num2 = 50;
-let val;
-
-val = num1/ num2;
-val = num1 % num2;
-
-
-//Math object
-
-val = Math.PI;
-val = Math.E;
-val = Math.round(2.4);
-val=Math.ceil(2.4);
-val=Math.floor(2.8);
-val=Math.sqrt(64);
-val=Math.abs(-3);
-val = Math.pow(8, 2);
-val = Math.min(2, 10);
-val=Math.max(2,10);
-val = Math.random();
-val = Math.random() * 20 +1;
-
-val = Math.floor(Math.random() * 20 + 1);  //random number b/w 1 and 20
-console.log(val);
-
-//String
-
-const firstName = 'William';
-const lastName = 'Johnson';
-
-let val;
-//Concatenation
-val = firstName + ' ' + lastName;
-
-//append
-val = 'Brad ';
-val += 'Traversy';
-
-
-//Escaping character
-val = 'That\'s awesome';
-
-val = firstName.length;
-val = firstName.concat(' ', lastName);
-
-val = firstName.toUpperCase();
-
-val = firstName[0];
-val = firstName[2];
-
-val = firstName.indexOf('l');
-val = firstName.lastIndexOf('l');
-
-val = firstName.charAt(4);
-val = firstName.substring(0, 4);
-val = firstName.slice(0, 4);
-val = firstName.slice(-3);
-
-//val = str.split(' '); //split stirng based on separator
-
-
-console.log(val);
-
-
-// Template Literal
-
-
-const name = 'John';
-const age = 29;
-const job = 'Web Developer';
-const city = 'Miami';
-let html;
-
-//without template strings (es5)
-
-html = '<ul><li> Name: ' + name + '</li><li> Age: '+ + age + '<li> Job: ' + job + '</li><li> City: ' + city + '</li></ul>';
-
-//document.body.innerHTML = html;
-
-
-//with template string
-
-function hello(){
-    return 'Hello';
-}
-
-html = `
-        <ul>
-            <li>Name: ${name} </li>
-            <li>Age: ${age} </li>
-            <li>Job: ${job}</li>
-            <li> City: ${city} </li>
-            <li>${2 + 2}</li>
-            <li>${hello()}</li>
-            <li>${age > 30 ? 'Over 30' : 'Under 30'}</li>
-        </ul>`;
-            
-
-document.body.innerHTML = html;
-
-
-
-// Arrays
-
-const numbers = [13, 24, 13, 44, 25];
-const numbers2 = new Array(6, 7, 8, 9, 10);
-const fruits = ['Apple', 'Guavava'];
-const mixed = [22, 'Hello', true, undefined, null, {a:1, b:2}, new Date()];
-
-let val;
-
-val = numbers.length;
-
-val = Array.isArray(numbers);
-
-val = numbers[3];
-
-numbers[2] = 100;
-
-val = numbers.indexOf(100);
-
-//add to end
-numbers.push(1000);
-numbers.unshift(0);
-
-//take off from end
-numbers.pop();
-
-//take off from start
-numbers.shift();
-
-//splice 
-
-numbers.splice(1,1);
-
-numbers.reverse();
-
-val = numbers.concat(numbers2);
-
-val = fruits.sort();
-
-const numbers3 = [13, 24, 13, 44, 25];
-
-//use the compare function
-
-val = numbers3.sort(function (x, y){
-    return x -y;
-});
-
-// reverse order
-
-val = numbers3.sort(function(x, y){
-    return y-x;
-});
-
-
-function under50(num){
-    return num < 50;
-}
-
-val = numbers3.find(under50);
-
-
-console.log(numbers);
-console.log(val);
-
-
-
-//Object literals
 
 const person = {
     firstName: 'Steve',
@@ -354,32 +104,11 @@ const person = {
     }
 }
 
-let val;
-
-val = person;
-
-//get specific value, two ways
-
-val = person.firstName;
-val = person['firstName'];
-
-val = person.hobbies;
-val = person.hobbies[1];
-val = person.address;
-val = person.address.city;
-val = person.address['city'];
-val = person.getBirthYear;
-val = person.getBirthYear();
-
-
-//console.log(val);
-
 
 const people = [
     {name: 'John', age: 30},
     {name: 'Mike', age: 40}
 ];
-
 
 for(let i=0; i<people.length; i++){
     console.log(people[i].name);
@@ -387,670 +116,59 @@ for(let i=0; i<people.length; i++){
 
 
 
-//Date and times
+html = `
+        <ul>
+            <li>Name: ${name} </li>
+            <li>Age: ${age} </li>
+            <li>Job: ${job}</li>
+            <li> City: ${city} </li>
+            <li>${2 + 2}</li>
+            <li>${hello()}</li>
+            <li>${age > 30 ? 'Over 30' : 'Under 30'}</li>
+        </ul>`;
+            
 
-let val;
-
-const today = new Date();
-let birthDate = new Date('9-11-1994 06:55:55');
-birthDate = new Date('September 10 1981');
-birthDate = new Date('9/10/1981');
-val = today;
-
-val = today.toString();
-console.log(today);
-
-val = birthDate;
-
-
-val = today.getMonth();
-val = today.getDate();
-val = today.getDay();
-val = today.getFullYear();
-
-birthDate.setDate(15);
-birthDate.setMonth(0);
-
-console.log(val);
-console.log(typeof val);
-console.log(birthDate);
+document.body.innerHTML = html;
 
 
+val = parseInt('100.30');
+val = parseFloat('100.40');
 
-// if statement
 
-let id = 100;
+document.body.addEventListener('click', deleteItem);
 
-if(id){
-    console.log(`the id is ${id}`);
-}else{
-    console.log('No id');
+function deleteItem(e){
+    if(e.target.className === 'fa fa-remove'){
+        console.log('delete item');
+    }    
 }
 
 
-if(typeof id !== 'undefined'){
-    console.log(`The ID is ${id}`);
-}else{
-    console.log('No Id');
-}
 
-
-//Switch
-
-const color = 'red';
-
-switch(color){
-    case 'red':
-        console.log('Red');
-        break;
-    case 'blue':
-        console.log('blue');
-        break;
-    defaut:
-        console.log('White');
-}
-
-switch(new Date().getDay()){
-    case 0:
-        day = 'Sunday';
-        break;
-    case 1:
-        day = 'Monday';
-        break;
-    case 2:
-        day = 'Tuesday';
-        break;
-    case 3:
-        day = 'Wednesday';
-        break;
-    case 4:
-        day = 'Thrusday';
-        break;
-    case 5:
-        day = 'Friday';
-        break;
-    case 6:
-        day = 'Saturday';
-        break;
-
-}
-
-console.log(day);
-
-
-//FUNCTIONS
-
-
-function greet(firstName = 'John', lastName = 'Doe'){        //es6
-    //if(typeof firstName === 'undefined'){firstName = 'John'}      //es5
-    //if(typeof lastName === 'undefined'){lastName = 'Doe'}
-    //console.log('Hello');
-    return `Hello ${firstName} ${lastName}`;
-}
-
-//console.log(greet('Steve', 'Smith'));
-//console.log(greet());
-
-
-//Function Expression
-
-const square = function(x){
-    return x*x;
-};
-
-const square1 = function square(x = 3){
-    return x*x;
-};
-
-console.log(square(8));
-console.log(square1(8));
-console.log(square1());
-
-
-//Immediately invocable function expressions - IIFEs
-// Execute the functon without calling it
-
-(function(){
-    console.log('IIFEs Ran ...');
-})();
-
-(function(name){
-    console.log(`Hello ${name}`);
-})('Amar');
-
-
-//PROPERTY METHODS
-
-const todo = {
-    add: function(){
-        console.log('To do..');
-    },
-    edit: function(id){
-        console.log(`Edit todo ${id}`)
+document.querySelector('form').addEventListener('submit', function(e){
+    const task = document.getElementById('task').value;
+    
+    let tasks;    
+    
+    if(localStorage.getItem('tasks') === null){
+        tasks = [];
+    }else{
+        tasks = JSON.parse(localStorage.getItem('tasks'));
     }
-}
 
-todo.delete = function(){
-    console.log('Delete todo');
-}
+    tasks.push(task);
 
-todo.add();
-todo.edit(100);
-todo.delete();
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 
+    alert('Task Saved');
 
-
-
-
-
-//General loops
-
-const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
-
-cars.forEach(function(car){
-    console.log(car);
+    e.preventDefault();
 });
 
-cars.forEach(function(car, index){
-    console.log(`${index}: ${car}`);
-});
-
-cars.forEach(function(car, index, array){
-    console.log(`${index}: ${car}`);
-    console.log(array);
-});
-
-//MAP
-
-const users = [
-    {id: 1, name: 'John'},
-    {id:2, name: 'Sara'},
-    {id:3, name: 'Karen'}
-];
-
-const ids = users.map(function(user){
-    return user.id;
-});
-
-console.log(ids);
-
-
-// For in loop
-const user1 = {
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 30
-}
-
-for(let x in user1){
-    console.log(x);
-}
-
-for(let x in user1){
-    console.log(`${x} : ${user1[x]}`);
-}
-
-
-
-
-//DOM
-
-//window (browser) is global object in JS (client side)
-
-window.console.log('100');
-console.log(101);
-
-//alert
-
-//window.alert('Hello World');
-//alert('Hello');
-
-
-//Prompt
-
-//const input = prompt();
-//alert(input);
-
-
-//Confirm
-
-/*
-if(confirm('Are you sure')){
-    console.log('Yes');
-}else{
-    console.log('No');
-}
-*/
-
-let val;
-
-//outer height / width
-
-val = window.outerHeight;
-val = window.outerWidth;
-
-//inner height/width
-
-val = window.innerHeight;
-val = window.innerWidth;
-
-
-//Scroll point
-
-val = window.scrollY;
-val = window.scrollX;
-
-
-//Location Object
-
-val = window.location;
-val= window.location.hostname;
-val = window.location.search;
-
-
-//Redirect
-
-//window.location.href = 'https://www.google.co.in';
-
-//Reload
-//window.location.reload();     //keeps reloading the page
-
-
-//HISTORY OBJECT
-
-//window.history.go(-1);      //last visited page
-//window.history.go(-2);      //second last visited page
-
-val = window.history.length;        // sites in history in current session
-
-
-//Navigator object  (Browser)
-
-val = window.navigator;
-
-val = window.navigator.appName;
-val = window.navigator.appVersion;
-val = window.navigator.platform;
-console.log(val);
-
-
-
-//SCOPE     (var, let, const)
-
-// Global Scope
-
-var a = 1;
-let b = 2;
-const c = 3;
-
-/*
-function test(){
-    var a = 4;
-    let b = 5;
-    const c = 6;
-
-    console.log('Function Scope ', a, b, c);
-}
-*/
-
-//test();
-
-/*
-if(true){
-    var a = 4;
-    let b = 5;
-    const c = 6;
-
-    console.log('Function Scope ', a, b, c);
-}
-*/
-// in block scope let, const are unaffected
-
-for(let b=0; b<10; b++){
-    console.log(`Loop : ${b}`);
-}
-console.log('Global Scope ', a, b, c);
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//DOM
-
-let val;
-
-val = document;
-val = document.all;     //all hirarchy element in dom
-val = document.all[0];  //html part
-val = document.all[1];  //head section
-val = document.all[6];  //body section code  
-val = document.all.length;  //no. of element in dom
-
-val = document.head;
-val = document.body;
-val = document.doctype;
-val = document.domain;
-val = document.URL;
-val = document.characterSet;
-val = document.contentType;
-
-// access forms
-
-val = document.forms;
-val = document.forms[0];    //first form
-//val = document.forms[0].id;
-//val = document.forms[0].method;
-//val = document.forms[0].action;
-
-
-//val = document.links;
-//val = document.links[0].classList[0];
-
-
-val = document.scripts[0].getAttribute('src');
-
-
-// COnverting collection to array
-
-let scripts = document.scripts;
-let scriptArr = Array.from(scripts);
-
-
-console.log(val);
-
-
-
-//Element Selector
-
-//Two single element selector   -   getElementById, querySelector
-
-console.log(document.getElementById('task-title'));
-
-//Get things from elements
-
-console.log(document.getElementById('task-title').id);
-
-//Change styling
-
-document.getElementById('task-title').style.background = '#333';
-document.getElementById('task-title').style.color = '#fff';
-document.getElementById('task-title').style.padding = '5px';
-//document.getElementById('task-title').style.display = 'none';
-
-document.getElementById('task-title').textContent = "Task List";
-document.getElementById('task-title').innerText = "My Task";
-
-const taskTitle = document.getElementById('task-title');
-taskTitle.innerHTML = '<span style="color: red;">Task List</span>';
-
-
-
-//--------------------------------------------------------------------------------------------------------------------------
-
-//single element selector
-//QuerySelector
-//document.querySelector();
-
-
-console.log(document.querySelector('#task-title'));
-console.log(document.querySelector('.card-title'));
-console.log(document.querySelector('h5'));      //access only 1st h5 element
-
-document.querySelector('li').style.color = 'red';
-document.querySelector('ul li').style.color = 'blue';       //access using nesting
-document.querySelector('li:last-child').style.color = 'yellow';     //access last element of li
-document.querySelector('li:nth-child(3)').style.color = 'cyan';     //access 3rd element of li
-document.querySelector('li:nth-child(4)').textContent = 'Hello World';     //access last element of li
-
-document.querySelector('li:nth-child(odd)').style.background = '#ccc';     //will change only 1st odd element background
-document.querySelector('li:nth-child(even)').style.background = '#f5f5f5';     //will change only 1st even element background
-
-
-//---------------------------------------------------------------------------------------------------------------------------
-
-//DOM selector for multiple elements
-
-//document.getElementsByClassName
-
-const items = document.getElementsByClassName('collection-item');       //access all elements with specified class name
-console.log(items);
-console.log(items[0]);
-
-items[0].style.color = 'red';
-items[3].textContent = 'Hello';
-
-const listItems = document.querySelector('ul').getElementsByClassName('collection-item');       //access all elements having 'collection-item' class inside ul only
-
-console.log(listItems);
-
-//-------------------------------------------------------
-
-//getElementsByTagName()
-
-let lis = document.getElementsByTagName('li');
-console.log(lis);
-console.log(lis[0]);
-
-lis[0].style.color = 'red';
-lis[3].textContent = 'Hello';
-
-//convert HTML Collection to array
-
-lis = Array.from(lis);
-
-lis.reverse();
-
-lis.forEach(function(li){
-    console.log(li.className);
-});
-
-lis.forEach(function(li, index){
-    console.log(li.className);
-    li.textContent = `${index}: Hello`;
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+tasks.forEach(function(task) {
+    console.log(task);
 });
 
 
-console.log(lis);
-
-//---------------------------------------------------------------------------------------------------
-
-//alternate background color change
-//document.querySelectorAll()
-const items = document.querySelectorAll('ul.collection li.collection-item');
-
-items.forEach(function(item, index){
-    item.textContent = `${index}: Hello`;
-});
-
-const liOdd = document.querySelectorAll('li:nth-child(odd');
-const liEven = document.querySelectorAll('li:nth-child(even)');
-
-liOdd.forEach(function(li, index){
-    li.style.background = '#ccc'
-});
-
-for(let i=0; i<liEven.length; i++){
-    liEven[i].style.background = '#f4f4f4';
-}
-
-
-
-console.log(items);
-
-
-//======================================================================================================DOM
-
-
-// TRAVERSING DOM
-
-let val;
-
-const list = document.querySelector('ul.collection');
-const listItem = document.querySelector('li.collection-item:first-child');
-
-val = listItem;
-val = list;
-
-//Get child nodes
-val = list.childNodes;
-val = list.childNodes[0];
-val = list.childNodes[1];
-val = list.childNodes[3].nodeName;
-val = list.childNodes[0].nodeType;
-
-//NodeType
-// 1    -   Element
-// 2    -   Attribute (depricated)
-// 3    -   Text node
-// 8    -   Comment
-// 9    -   Document itself
-// 10   -   Doctype
-
-//Get Children element nodes
-//val = list.childNodes;
-val = list.children;
-val = list.children[0];
-list.children[1].textContent = 'Hello';
-
-//Children of children
-
-val = list.children[3].children;
-val = list.children[3].children[0];
-
-val = list.children[3].children[0].children[0];
-// val = list.children[3].children[0].children[0].children[0];      //undefined
-
-list.children[3].children[0].id = 'test-link';
-val = list.children[3].children[0];
-
-//first child
-val = list.firstChild;
-val = list.firstElementChild;
-
-//last child
-val = list.lastChild;
-val = list.lastElementChild;
-
-//count child elements
-val = list.childElementCount;
-
-//get parent node
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
-
-//Get next sibling
-val = listItem.nextSibling;
-val = listItem.nextElementSibling.nextElementSibling;
-
-//Get previous sibling
-val = listItem.previousSibling;
-val = listItem.previousElementSibling;
-val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
-
-console.log(val);
-
-//--------------------------------------------------------------------------------------------------
-
-// Create element and append
-
-const li = document.createElement('li');
-
-//Add Class
-li.className = 'collection-item';
-
-//Add Id
-li.id = 'new-item';
-
-//Add attribute
-li.setAttribute('title', 'New Item');
-
-//create text node and append
-li.appendChild(document.createTextNode('Hello World'));
-
-//append li as child to ul
-document.querySelector('ul.collection').appendChild(li);
-
-
-//create new link element
-const link = document.createElement('a');
-//add class
-link.className = 'delete-item secondary-content';
-link.innerHTML = '<i class="fa fa-remove"></i>';
-
-//Append link to li
-
-li.appendChild(link);
-console.log(li);
-
-
-
-//------------------------------------------------------------------------------------------------------
-
-//REPLACE ELEMENT
-
-//Create Element
-
-const newHeading = document.createElement('h2');
-
-//add id
-newHeading.id = 'task-title';
-
-//new text node
-newHeading.appendChild(document.createTextNode('Task List'));
-
-
-//Get old heading
-const oldHeading = document.getElementById('task-title');
-
-//Parent
-const cardAction = document.querySelector('.card-action');
-
-//Replace
-cardAction.replaceChild(newHeading, oldHeading);
-
-//REMOVE
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
-
-//Remove list item
-lis[0].remove();
-//lis[1].remove();
-//lis[2].remove();
-
-//Remove child element
-list.removeChild(lis[3]);
-
-
-//CLASSES   &  ATTR
-const firstLi = document.querySelector('li:first-child');
-const link = firstLi.children[0];
-
-let val;
-
-//CLASSES
-val = link.className;
-val = link.classList;
-val = link.classList[0];
-
-// add/remove class list
-link.classList.add('test');
-link.classList.remove('test');
-
-val = link;
-
-
-//ATTRIBUTE
-val = link.getAttribute('href');
-link.setAttribute('href', 'http://google.com');
-link.setAttribute('title', 'Google');
-val = link.hasAttribute('href');
-val = link.hasAttribute('title');
-link.removeAttribute('title');
-val = link;
-
-console.log(val);
-
-
-
-//---------------------------------------------------------------------------------------
 
