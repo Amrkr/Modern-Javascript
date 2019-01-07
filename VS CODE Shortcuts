@@ -1,0 +1,26 @@
+Modern JS Udemy
+==========================================================
+VS CODE Shortcut:
+==========================================================
+ctrl + /		-	Comment selected lines
+
+
+
+
+=========================================================
+HTML TAG Shortcuts
+==========================================================
+
+! TAB		- Basic Html definition with taga
+.test		- Div with class "test"
+h1.test		- h1 tag with class "test"
+h1#test		- h1 tag with id "test"
+
+==========================================================
+
+Execution in browser Console
+==========================================================
+alert(123)
+4+4		returns 8
+document		returns dom structure of current page
+document.querySelector('h1').style.color = 'red'		change the style of h1 tag content
