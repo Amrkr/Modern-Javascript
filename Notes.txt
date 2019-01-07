@@ -1,0 +1,174 @@
+rgb     value is between 0 and 255
+
+
+
+===================================================================
+tag*count
+
+option*3    will give three options tag
+
+===================================================================
+
+
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+
+
+MOUSE EVENTS:           click   dblclick    mousedown   mouseup     mouseenter      mouseleave      mouseover       mouseout
+KEY & INPUT EVENTS:     change  keydown     keyup       keypress    focus           blur            cut             paste           input (ctrl + X,V,Z  on these input event will trigger)
+
+
+heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+
+
+e.target;
+e.target.id;
+e.target.className;
+e.target.classList;
+e.target.value;
+e.preventDefault();
+
+
+document.querySelector('.clear-tasks').addEventListener('click', 
+function(e){
+    console.log('Hello World');
+    e.preventDefault();         //stop default/defined behavior of event
+});
+
+
+link.setAttribute('title', 'Google');
+
+
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+
+const liOdd = document.querySelectorAll('li:nth-child(odd');
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+
+document.querySelector('li:nth-child(3)').style.color = 'cyan';     //access 3rd element of li
+document.querySelector('li:nth-child(4)').textContent = 'Hello World';     //access last element of li
+
+
+document.getElementById('task-title').style.background = '#333';
+document.getElementById('task-title').style.color = '#fff';
+document.getElementById('task-title').style.padding = '5px';
+
+
+console.log(document.getElementById('task-title').id);
+
+
+val = window.navigator;
+val = window.navigator.appName;
+val = window.navigator.appVersion;
+val = window.navigator.platform;
+
+
+const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
+
+cars.forEach(function(car, index){
+    console.log(`${index}: ${car}`);
+});
+
+
+function greet(firstName = 'John', lastName = 'Doe'){        //es6
+    //if(typeof firstName === 'undefined'){firstName = 'John'}      //es5
+    //if(typeof lastName === 'undefined'){lastName = 'Doe'}
+    //console.log('Hello');
+    return `Hello ${firstName} ${lastName}`;
+}
+
+
+
+const today = new Date();
+let birthDate = new Date('9-11-1994 06:55:55');
+birthDate = new Date('September 10 1981');
+birthDate = new Date('9/10/1981');
+val = today.toString();
+
+
+const person = {
+    firstName: 'Steve',
+    lastName: 'Smith',
+    age: 30,
+    email: 'steve@alo.com',
+    hobbies: ['music', 'sport'],
+    address: {
+        city: 'Miami',
+        state: 'FL'
+    },
+    getBirthYear: function(){
+        return 2018 - this.age;
+    }
+}
+
+
+const people = [
+    {name: 'John', age: 30},
+    {name: 'Mike', age: 40}
+];
+
+for(let i=0; i<people.length; i++){
+    console.log(people[i].name);
+}
+
+
+
+html = `
+        <ul>
+            <li>Name: ${name} </li>
+            <li>Age: ${age} </li>
+            <li>Job: ${job}</li>
+            <li> City: ${city} </li>
+            <li>${2 + 2}</li>
+            <li>${hello()}</li>
+            <li>${age > 30 ? 'Over 30' : 'Under 30'}</li>
+        </ul>`;
+            
+
+document.body.innerHTML = html;
+
+
+val = parseInt('100.30');
+val = parseFloat('100.40');
+
+
+document.body.addEventListener('click', deleteItem);
+
+function deleteItem(e){
+    if(e.target.className === 'fa fa-remove'){
+        console.log('delete item');
+    }    
+}
+
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+    const task = document.getElementById('task').value;
+    
+    let tasks;    
+    
+    if(localStorage.getItem('tasks') === null){
+        tasks = [];
+    }else{
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    tasks.push(task);
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    alert('Task Saved');
+
+    e.preventDefault();
+});
+
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+tasks.forEach(function(task) {
+    console.log(task);
+});
+
+
+
