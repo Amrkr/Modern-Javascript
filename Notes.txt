@@ -1,7 +1,7 @@
 rgb     value is between 0 and 255
 
 
-
+VS CODE FORMAT : CTRL + K + F
 ===================================================================
 tag*count
 
