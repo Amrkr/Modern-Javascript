@@ -96,5 +96,38 @@ Customer.prototype.greeting = function(){
 console.log(customer1.greeting());
 
 
+//==============================================================
+//              Using Object.create
+//================================================================
+
+const personPrototype = {
+    greeting: function(){
+        return `Hello there ${this.firsrName} ${this.lastName}`;
+    },
+    getsMarried: function(newLastName){
+        this.lastName = newLastName;
+    }
+}
+
+//create object
+const mary = Object.create(personPrototype);
+mary.firsrName = 'Mary';
+mary.lastName = 'Williams';
+mary.age = 30;
+
+mary.getsMarried('Thompson');
+
+console.log(mary.greeting());
+
+//other way to create object
+const brad = Object.create(personPrototype, {
+    firsrName: {value: 'Brad'},
+    lastName: {value: 'Traversy'},
+    age: {value: 36}
+});
+
+console.log(brad);
+console.log(brad.greeting());
+
 
 
