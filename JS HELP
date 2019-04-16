@@ -9,3 +9,20 @@ var dateString = (d <= 9 ? '0' + d : d) + '-' + (m <= 9 ? '0' + m : m) + '-' + y
 
 //////////////////////////////////////////////////////////////////////////////////
 
+=========================== Alphabets =======================
+
+var lastName = employee.getValue('lastname');
+						var format = /^[A-Za-z]+$/;						
+						
+						if(!format.test(lastName) && lastName){							
+							employee.setValue('lastname', '');
+							dialog.alert({
+								title : 'Error - Last Name',
+								message : "Name should contains alphabets only."
+							});
+							return false;
+							
+=========================== Numeric ================================
+
+var reg = /^\d+$/;							
+=====================================================================================================================================
