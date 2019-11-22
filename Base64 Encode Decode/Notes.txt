@@ -1,0 +1,31 @@
+Another way to convert form file to Base64 is to call reader.readAsBinaryString(blob) and 
+use btoa(reader.result) to get the Base64 string. 
+
+However, this method will most likely work slower and is not supported by Internet Explorer at all.
+
+===================================================== await
+/*
+
+  console.log('Reader', reader);
+  var b64 = reader.result.replace(/^data:.+;base64,/, '');
+
+  //console.log('reader', btoa(file));
+  console.log('reader', b64);
+*/
+  /*
+  const toBase64 = file =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+
+  async function Main() {
+    const file = document.querySelector('#inputFile').files[0];
+    console.log(await toBase64(file));
+  }
+
+  Main();*/
+
+  ===================================================
