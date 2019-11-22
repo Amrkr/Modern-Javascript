@@ -1,0 +1,16 @@
+.inputVal {
+  color: blue;
+}
+
+.encodedVal {
+  color: green;
+}
+
+.decodedVal {
+  color: red;
+}
+
+.divWidth {
+  width: 80%;
+  word-wrap: break-word;
+}
