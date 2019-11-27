@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script src="JSON_Object.js"></script>
+    <script src="excel_edit.js"></script>
+    <script src="accural_test.js"></script>
+
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+
+  <body>
+    <h3>Encode String</h3>
+
+    <input id="input1" name="To Encode" />
+
+    <button id="btn1" onclick="encodeDecode()">Encode And Decode</button
+    ><br /><br />
+
+    Input Value: <span id="span1" class="inputVal"></span><br />
+    Encoded(base64) Value: <span id="span2" class="encodedVal"></span><br />
+    Decoded Value: <span id="span3" class="decodedVal"></span><br />
+
+    <hr />
+
+    <h3>Encode File</h3>
+    <br />
+
+    <input id="inputFile" type="file" />
+    <button id="btn1" onclick="encodeFile()">Encode And Decode</button>
+    <br />
+
+    <div>
+      <span>Encoded File Output</span>
+      <p id="p1" class="divWidth"></p>
+    </div>
+
+    <div>
+      <span>Decoded File Output</span>
+      <p id="p2" class="divWidth"></p>
+    </div>
+
+    <div>
+      <span>Decoded Output</span>
+      <p id="p3" class="divWidth"></p>
+    </div>
+
+    <div>
+      <span>Encode Output File Again</span>
+      <p id="p4" class="divWidth"></p>
+    </div>
+
+    <div>
+      <span>Download Output File</span>
+      <a href="" id="downloadFile1" onclick="download1()"
+        >click here to download your file</a
+      >
+    </div>
+    <br />
+    <div>
+      <span>Download Output JSON File</span>
+      <a href="" id="downloadFile2" onclick="downloadJSON()">Download JSON</a>
+    </div>
+    <br />
+    <div>
+      <span>Sort 2D Array</span>
+      <button id="btnSort" onclick="sort2DArray()">Sort Array</button>
+    </div>
+  </body>
+</html>
