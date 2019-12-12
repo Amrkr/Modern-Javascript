@@ -1,0 +1,101 @@
+                                                            Object
+************************************************************************************************************************************
+let descriptions = {
+  work: "Went to work",
+  "touched tree": "Touched a tree"
+};
+
+let anObject = {left: 1, right: 2};
+console.log(anObject.left);
+// → 1
+delete anObject.left;
+console.log(anObject.left);
+// → undefined
+console.log("left" in anObject);
+// → false
+console.log("right" in anObject);
+// → true
+
+
+console.log(Object.keys({x: 0, y: 0, z: 2}));
+// → ["x", "y", "z"]
+
+Object.assign function that copies all properties from one object into another.
+-----------------------------------------------------------------------------------
+let objectA = {a: 1, b: 2};
+Object.assign(objectA, {b: 3, c: 4});
+console.log(objectA);
+// → {a: 1, b: 3, c: 4}
+
+Object Comparision
+---------------------------
+let object1 = {value: 10};
+let object2 = object1;
+let object3 = {value: 10};
+
+console.log(object1 == object2);
+// → true
+console.log(object1 == object3);
+// → false
+
+object1.value = 15;
+console.log(object2.value);
+// → 15
+console.log(object3.value);
+// → 10
+
+CONST Object
+------------
+const score = {visitors: 0, home: 0};
+// This is okay
+score.visitors = 1;
+// This isn't allowed
+score = {visitors: 1, home: 1};
+
+----------------------------------------------
+let journal = [];
+
+function addEntry(events, squirrel) {
+  journal.push({events, squirrel});
+}
+
+addEntry(["work", "touched tree", "pizza", "running",
+          "television"], false);
+addEntry(["work", "ice cream", "cauliflower", "lasagna",
+          "touched tree", "brushed teeth"], false);
+          
+journal[0]
+//{"events":["work","touched tree","pizza","running","television"],"squirrel":false}
+
+journal[1]
+//{"events":["work","ice cream","cauliflower","lasagna","touched tree","brushed teeth"],"squirrel":false}
+
+
+Array LOOPS
+------------
+for (let entry of journal) {
+  console.log(`${entry.events.length} events.`);
+}
+
+for (let entry of journal) {
+  console.log(`${JSON.stringify(entry)}`);
+}
+
+//{"events":["work","touched tree","pizza","running","television"],"squirrel":false}
+//{"events":["work","ice cream","cauliflower","lasagna","touched tree","brushed teeth"],"squirrel":false}
+
+
+JSON.stringify
+---------------------------------------------
+var arr = ["work","touched tree","pizza","running","television"]
+
+JSON.stringify(arr)
+//"["work","touched tree","pizza","running","television"]"
+
+arr.toString()
+//"work,touched tree,pizza,running,television"
+
+JSON.stringify(journal[0])
+//{"events":["work","touched tree","pizza","running","television"],"squirrel":false}
+
+
