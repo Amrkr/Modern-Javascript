@@ -1,4 +1,4 @@
-                                                            Object
+                                                            Object / Array
 ************************************************************************************************************************************
 let descriptions = {
   work: "Went to work",
@@ -98,4 +98,93 @@ arr.toString()
 JSON.stringify(journal[0])
 //{"events":["work","touched tree","pizza","running","television"],"squirrel":false}
 
+
+ARRAY
+-----------
+let todoList = [];
+function remember(task) {
+  todoList.push(task);
+}
+function getTask() {
+  return todoList.shift();
+}
+function rememberUrgently(task) {
+  todoList.unshift(task);
+}
+
+
+remember('a')
+remember('b')
+
+todoList
+//["a", "b"]
+
+getTask()
+//"a"
+
+todoList
+//["b"]
+
+todoList[0]
+//"b"
+
+remember('a')
+
+rememberUrgently('c')
+
+todoList
+//["c", "b", "a"]
+
+array methods
+-------------------------------------------
+
+console.log([1, 2, 3, 2, 1].indexOf(2));
+// → 1
+console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+// → 3
+
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+// → [2, 3]
+console.log([0, 1, 2, 3, 4].slice(2));
+// → [2, 3, 4]
+
+
+STRING METHODS
+--------------------------------------------
+console.log("coconuts".slice(4, 7));
+// → nut
+console.log("coconut".indexOf("u"));
+// → 5
+
+console.log("  okay \n ".trim());
+// → okay
+
+let sentence = "Secretarybirds specialize in stomping";
+let words = sentence.split(" ");
+console.log(words);
+// → ["Secretarybirds", "specialize", "in", "stomping"]
+console.log(words.join(". "));
+// → Secretarybirds. specialize. in. stomping
+
+console.log("LA".repeat(3));
+// → LALALA
+
+let string = "abc";
+console.log(string.length);
+// → 3
+console.log(string[1]);
+// → b
+
+---------------------------------------
+Rest parameters (any no. of params)
+---------------------------------------
+function max(...numbers) {
+  let result = -Infinity;                     // most negative number
+  for (let number of numbers) {
+    if (number > result) result = number;
+  }
+  return result;
+}
+console.log(max(4, 1, 9, -2));
+// → 9
 
