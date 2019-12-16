@@ -149,6 +149,11 @@ console.log([0, 1, 2, 3, 4].slice(2));
 // → [2, 3, 4]
 
 
+["A", "B"].forEach(l => console.log(l));
+// → A
+// → B
+
+
 STRING METHODS
 --------------------------------------------
 console.log("coconuts".slice(4, 7));
