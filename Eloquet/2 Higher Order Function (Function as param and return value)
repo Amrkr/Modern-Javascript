@@ -1,0 +1,101 @@
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. 
+
+function greaterThan(n) {
+  return m => m > n;
+}
+let greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));
+// → true
+
+
+let greaterThan100 = greaterThan(100);
+greaterThan100(500)
+//true
+
+greaterThan(5)(6)
+//true
+
+
+function noisy(f) {
+  return (...args) => {
+    console.log("calling with", args);
+    let result = f(...args);
+    console.log("called with", args, ", returned", result);
+    return result;
+  };
+}
+noisy(Math.min)(3, 2, 1);
+// → calling with [3, 2, 1]
+// → called with [3, 2, 1] , returned 1
+
+--------------------------------------------------------------------
+We can even write functions that provide new types of control flow.
+
+function unless(test, then) {
+  if (!test) then();
+}
+
+repeat(3, n => {
+  unless(n % 2 == 1, () => {
+    console.log(n, "is even");
+  });
+});
+// → 0 is even
+// → 2 is even
+
+--------------------------------------------------------------------
+["A", "B"].forEach(l => console.log(l));
+// → A
+// → B
+
+
+--------------------------------------------------------------------
+Function as parameter.
+
+function filter(array, test) {
+  let passed = [];
+  for (let element of array) {
+    if (test(element)) {
+      passed.push(element);
+    }
+  }
+  return passed;
+}
+
+//console.log(SCRIPTS);
+console.log(filter(SCRIPTS, script => script.living));
+// → [{name: "Adlam", …}, …]
+
+//SCRIPTS
+[{
+		name: "Adlam",
+		ranges: [
+			[125184, 125259],
+			[125264, 125274],
+			[125278, 125280],
+		],
+		direction: "rtl",
+		year: 1987,
+		living: true,
+		link: "https://en.wikipedia.org/wiki/Fula_alphabets#Adlam_alphabet"
+	},
+
+	{
+		name: "Caucasian Albanian",
+		ranges: [
+			[66864, 66916],
+			[66927, 66928]
+		]
+		direction: "ltr",
+		year: 420,
+		living: false,
+		link: "https://en.wikipedia.org/wiki/Caucasian_Albanian_alphabet"
+	}
+]
+
+
+BUILT IN FUNCTION 'Filter' on Array
+
+console.log(SCRIPTS.filter(s => s.direction == "ttb"));
+--------------------------------------------------------------------
+
