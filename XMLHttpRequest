@@ -1,0 +1,5 @@
+var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+var theUrl = 'https://kijtwqdyrqzc6bh-dboraclecloud.adb.us-ashburn-1.oraclecloudapps.com/ords/amar/sample_table/15,a';
+xmlhttp.open("POST", theUrl);
+xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xmlhttp.send(JSON.stringify({"col3": "NEW"}));
